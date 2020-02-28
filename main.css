@@ -1,10 +1,18 @@
 .boxed {
-    border: 2px solid green;
+    border: 1px solid black;
+    background-color: #8c9ecf;
+    padding: 5px;
+
+}
+
+#header {
+    margin-top: 10px;
 }
 
 #itemBox {
     display: block;
 }
+
 
 #orderBox {
     display: block;
