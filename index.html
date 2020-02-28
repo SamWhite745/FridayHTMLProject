@@ -45,6 +45,13 @@
                             <div class="col boxed itemButton" onclick="console.log('Hello!')">
                                 Add new Item
                             </div>
+                            
+                            <!-- <select multiple="multiple" class="image-picker show-html">
+                                    <option data-img-src="http://placekitten.com/220/200" value="1">meme 1</option>
+                                    <option data-img-src="http://placekitten.com/180/200" value="2">meme 2</option>
+                                    <option data-img-src="http://placekitten.com/130/200" value="3">Cute Kitten 3</option>
+                                    <option data-img-src="http://placekitten.com/270/200" value="4">meme 4</option>
+                                  </select> -->
 
                             <div class="col boxed itemBoxes">
                                 <div class="row">
@@ -86,13 +93,91 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
-                        Hello Order World
+                       WELCOME TO ORDERS
+                        <h3>Add an Order:</h3>
+
+<!--  -->
+<form onsubmit="postData(event)">
+    <input name="text"/>
+    <input type="submit"/>
+
+</form>
+<ul id = "tasks">
+
+</ul>
+
+<div class="modal" tabindex="-1" role="dialog" id="updateModal">
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <h5 class="modal-title">Order ID</h5>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <form id="updateForm" onsubmit="modalUpdate.updateTask(event)">
+        <div class="modal-body">
+              <h2>Meme:</h2>
+              
+              <input name="text" type="text">
+              <p>N0 of memes in order: 
+             <input memes="text" type="number">
+              </p>
+              
+              
+            </div>
+            <div class="modal-footer">
+              <input type="submit" class="btn btn-primary" >
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+<!--  -->
+
+
+
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
