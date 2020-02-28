@@ -1,3 +1,11 @@
 .boxed {
     border: 2px solid green;
 }
+
+#itemBox {
+    display: block;
+}
+
+#orderBox {
+    display: block;
+}
