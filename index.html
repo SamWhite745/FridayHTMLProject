@@ -15,67 +15,97 @@
 
 <body>
 
-    <div id = "header" class = "container" >
+
+    <div class="container">
         <div class="row">
             <div class="col">
-                <img src="buffjenkins.jpg" width = "100%" height = "auto" alt = "Logo">
+                <img src="buffjenkins.jpg" width="100%" height="auto" alt="Logo">
             </div>
             <div class="col-10">
                 <h1> The Professional Meme Store </h1>
             </div>
         </div>
-    </div>
+        <div class="accordion" id="accordionExample">
 
-    <div class="container">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Items
+                        </button>
+                    </h2>
+                </div>
 
-            <div class="row boxed">
-                <b>Items</b>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div id="itemCard" class="card-body">
+                        <div class="row row-cols-lg-2 row-cols-sm-1">
+
+                            <div class="col boxed itemBoxes">
+                                <div class="col-3">
+                                    <img src="Stonks.png" alt="Stonks">
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        Title:
+                                        <input type="text" name="Title">
+                                    </div>
+                                    <div class="row">
+                                        Price:
+                                        <input type="text" name="Price">
+                                    </div>
+                                    <div class="row">
+                                        URL:
+                                        <input type="text" name="URL">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col boxed itemBoxes">
+                                    <div class="col-3">
+                                        <img src="Stonks.png" alt="Stonks">
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            Title:
+                                            <input type="text" name="Title">
+                                        </div>
+                                        <div class="row">
+                                            Price:
+                                            <input type="text" name="Price">
+                                        </div>
+                                        <div class="row">
+                                            URL:
+                                            <input type="text" name="URL">
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
             </div>
-            
-            <div id="itemBox" class="row boxed">
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
-                . <br>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Orders
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Hello Order World
+                    </div>
+                </div>
             </div>
-            
-
-        <br>
-
-        <div class="row boxed">
-                <b>Orders</b>
         </div>
-        <div id="orderBox" class="row boxed">
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-            . <br>
-        </div>
-
-
-
 
     </div>
 
