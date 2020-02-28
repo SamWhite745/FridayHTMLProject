@@ -1,4 +1,4 @@
-let getAllData = () => {
+let getAllItemData = () => {
     let request = new XMLHttpRequest();
     request.open("GET", "http://35.246.87.193:8081/item/all/");
     request.send();
@@ -90,4 +90,4 @@ let getAllData = () => {
     }
 }
 
-getAllData();
+getAllItemData();
