@@ -1,5 +1,6 @@
 .boxed {
     border: 2px solid green;
+    border-radius: 10px;
 }
 
 #itemBox {
@@ -8,4 +9,9 @@
 
 #orderBox {
     display: block;
+}
+
+#itemCard img {
+    width: 100px;
+    height: 100px;
 }
