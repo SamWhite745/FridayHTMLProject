@@ -7,8 +7,8 @@ let getAllItemData = () => {
         itemList.innerText = "";
 
         let newItemButton = document.createElement("div");
-        newItemButton.setAttribute("class","col boxed itemButton");
-        newItemButton.setAttribute("onclick","console.log('Hello!')");
+        newItemButton.setAttribute("class", "col boxed itemButton");
+        newItemButton.setAttribute("onclick", "console.log('Hello!')");
 
         itemList.append(newItemButton);
 
@@ -42,7 +42,7 @@ let getAllItemData = () => {
             titleTBox.value = obj.name;
             titleRow.append(titleTBox);
             textDiv.append(titleRow);
-            
+
 
             let priceRow = document.createElement("div");
             priceRow.setAttribute("class", "row");
@@ -67,7 +67,7 @@ let getAllItemData = () => {
             rowDiv.append(textDiv);
 
             let deleteDiv = document.createElement("div");
-            deleteDiv.setAttribute("class","row");
+            deleteDiv.setAttribute("class", "row");
             let deleteButton = document.createElement("button");
             deleteButton.innerText = "delete";
             deleteButton.addEventListener("click", () => {
@@ -76,7 +76,7 @@ let getAllItemData = () => {
             deleteDiv.append(deleteButton);
 
             let updateDiv = document.createElement("div");
-            updateDiv.setAttribute("class","row");
+            updateDiv.setAttribute("class", "row");
             let updateButton = document.createElement("button");
             updateButton.innerText = "update";
             updateButton.addEventListener("click", () => {
@@ -91,9 +91,20 @@ let getAllItemData = () => {
 }
 
 getAllItemData();
+
+
+let deleteData = (id) => {
+    let request = new XMLHttpRequest();
+    request.open("DELETE", "http://35.246.87.193:8081/order/" + id + "/");
+    request.send();
+    request.onload = () => {
+        getData();
+    }
+
+}
 let getData = () => {
     let request = new XMLHttpRequest();
-    request.open("GET", "http://localhost:8081/note/");
+    request.open("GET", "http://35.246.87.193:8081/order/all/");
     request.send();
     request.onload = () => {
         let data = JSON.parse(request.response);
@@ -147,7 +158,7 @@ let postData = (event) => {
 
     let obj = objFromForm(event);
     let request = new XMLHttpRequest();
-    request.open("POST", "http://localhost:8081/note/");
+    request.open("POST", "http://35.246.87.193:8081/order/");
     request.setRequestHeader("Content-Type", "application/json")
 
     let body = JSON.stringify(obj);
@@ -172,42 +183,34 @@ let openModal = (task) => {
     }
 
 }
-let update = () => {
-    let updateId = 0;
-    return {
-        setId: (id) => {
-            updateId = id;
-        },
-        updateTask: (event) => {
-            event.preventDefault();
-            let obj = objFromForm(event);
-            obj.id =  updateId;
-            let request = new XMLHttpRequest();
-            request.open("PUT", "http://localhost:8081/note/");
-            request.setRequestHeader("Content-Type", "application/json")
-            let body = JSON.stringify(obj);
-            console.log(body)
-            request.send(body);
-            request.onload = () => {
-                console.log("hm")
-                $('#updateModal').modal({ show: false })
-                getData();
-            }
-        }
-    }
+// let update = () => {
+//     let updateId = 0;
+//     return {
+//         setId: (id) => {
+//             updateId = id;
+//         },
+//         updateTask: (event) => {
+//             event.preventDefault();
+//             let obj = objFromForm(event);
+//             obj.id =  updateId;
+//             let request = new XMLHttpRequest();
+//             request.open("PUT", "http://35.246.87.193:8081/order/");
+//             request.setRequestHeader("Content-Type", "application/json")
+//             let body = JSON.stringify(obj);
+//             console.log(body)
+//             request.send(body);
+//             request.onload = () => {
+//                 console.log("hm")
+//                 $('#updateModal').modal({ show: false })
+//                 getData();
+//             }
+//         }
+//     }
 
-}
+// }
 let modalUpdate = update();
 
-let deleteData = (id) => {
-    let request = new XMLHttpRequest();
-    request.open("DELETE", "http://localhost:8081/note/" + id);
-    request.send();
-    request.onload = () => {
-        getData();
-    }
 
-}
 
 
 
